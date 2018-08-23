@@ -39,7 +39,14 @@
             },
             read() {
                 // Todo
+                window.axios.get('/api/cruds').then(({ data }) => {
+                // console.log(data)
+                data.forEach (crud => {
+                    this.cruds.push(new Crud(crud));
+                });
+            });
             },
+            
             update(id, color) {
                 // To do
             },
@@ -52,4 +59,27 @@
             CrudComponent
         }
     }
+
+    /*
+    Sample response:
+
+    [
+    {
+        "id": 0,
+        "name": "ijjpfodc",
+        "color": "green",
+        "created_at": "2018-02-02 09:15:24",
+        "updated_at": "2018-02-02 09:24:12"
+    },
+    {
+        "id": 1,
+        "name": "wjwxecrf",
+        "color": "red",
+        "created_at": "2018-02-03 09:26:31",
+        "updated_at": "2018-02-03 09:26:31"
+    }
+    ]
+    */
+
 </script>
+
