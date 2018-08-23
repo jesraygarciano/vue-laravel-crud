@@ -31,4 +31,10 @@ class CrudsController extends Controller
         $crud->save();
     }
 
+    public function destroy($id){
+        Crud::destroy($id);
+
+        return response(null, Response::HTTP_OK);
+    }
+
 }
